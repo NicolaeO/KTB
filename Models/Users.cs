@@ -1,12 +1,15 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Linq;
 
 namespace KTB.Models{
-     public abstract class BaseEntity{}
+
+    public abstract class BaseEntity{}
+    
     public class Users : BaseEntity{
         
         [Key]
@@ -39,6 +42,7 @@ namespace KTB.Models{
         public string password { get; set; }
 
         public DateTime created_at { get; set; } 
+        public DateTime updated_at { get; set; } 
 
         public List<UserCategory> UserCategory { get; set; }
         public List<Games> Games { get; set; }
@@ -52,6 +56,9 @@ namespace KTB.Models{
             UserAnswer = new List<UserAnswer>();
             UserChat = new List<UserChat>();
             Chats = new List<Chats>();
+
+            created_at = DateTime.Now;
+            updated_at = DateTime.Now;
         }
     }
 }

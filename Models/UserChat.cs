@@ -15,6 +15,6 @@ namespace KTB.Models{
         public int chatId{get; set;}
         public Chats Chat{get; set;}
 
-        
+
     }
 }

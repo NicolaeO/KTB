@@ -3,10 +3,10 @@ for details on configuring this project to bundle and minify static web assets. 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url("/images/bricWall.jpg");
+    background-color: #cccccc;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
@@ -28,23 +28,60 @@ body {
     margin: 15px;
 }
 
+.mainBody{
+    height: 100%;
+    margin-top: 10px;
+}
+
 .leftSide{
     display: inline-block;
     width: 20%;
     min-width: 50px;
-    max-width: 100px;
     vertical-align: top;
-    outline: 1px solid red;
-
+    height: 100%;
+   
 }
 .leftSide img {
     width: 100%;
     height: auto;
+    outline: 1px solid black;
 }
-.mainBody{
-    margin-top: 5px;
+.leftSide h4{
+    text-align: center;
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.rightSide{
+    /* margin-left: 10%; */
+    display: inline-block;
+    width: 79%;
+    vertical-align: top;
+    /* outline: 1px solid red; */
+}
+.rightSide h4 b{
+    color: red;
+}
+.rightSide h4, .rightSide p{
+    text-align: right;
+    margin-right: 5%;
 }
 
+.rightSide p{
+    /* display: inline-block; */
+    font-size: 13pt;
+    color: rgb(91, 91, 236);
+}
+
+#played{
+    margin-left: 10%;
+    margin-top: -20%;
+    float: left;
+}
+
+
+
+
+ /* ********************** mobile devices ************************* */
 @media screen and (max-width: 480px) {
     /* Hide captions */
     .carousel-caption {
@@ -58,10 +95,40 @@ body {
     .mainBody{
         width: 100%;
     }
-}
 
+    .leftSide{
+        /* display: inline-block; */
+        width: 50%;
+        outline: 1px solid red;
+    }
+    .rightSide h4 b{
+        color: red;
+    }
+    .rightSide h4, .rightSide p{
+        text-align: center;
+    }
+    .rightSide p{
+        font-size: 13pt;
+        color: rgb(91, 91, 236);
+    }
+    .rightSide{
+        /* margin-left: 10%; */
+        display: inline-block;
+        width: 100%;
+        vertical-align: top;
+        outline: 1px solid red;
+    }
+    #played{
+        margin: 0%;
+        width: 100%;
+        float: none;
+    }
+   
+
+  
+}
 /* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 482px) {
     /* Hide captions */
     .carousel-caption {
         display: none;

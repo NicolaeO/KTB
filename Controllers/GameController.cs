@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Http;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Threading.Tasks;
+// using System.Threading.Tasks;
 
 
 namespace KTB.Controllers{
@@ -27,7 +27,8 @@ namespace KTB.Controllers{
             _context = context;
         }
 
-        public IActionResult NewGame(){
+        public IActionResult Main(){
+            GetRequest(URL);
 
             return RedirectToAction("Index", "Home");
         }
@@ -35,7 +36,7 @@ namespace KTB.Controllers{
 
         async static void GetRequest(string url){
             using(HttpClient client = new HttpClient()){
-                using (HttpResponseMessage response = await client.GetAsync(URL)){
+                using (HttpResponseMessage response = await client.GetAsync(url)){
                     using(HttpContent content = response.Content){
                         string mycontent = await content.ReadAsStringAsync();
                         Console.WriteLine("****************************************************");

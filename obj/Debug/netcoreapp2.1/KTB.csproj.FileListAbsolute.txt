@@ -34,8 +34,6 @@
 /home/nick/GITHUB_WORK/KTB/obj/Debug/netcoreapp2.1/KTB.RazorAssemblyInfo.cs
 /home/nick/GITHUB_WORK/KTB/obj/Debug/netcoreapp2.1/KTB.AssemblyInfoInputs.cache
 /home/nick/GITHUB_WORK/KTB/obj/Debug/netcoreapp2.1/KTB.AssemblyInfo.cs
-/home/nick/GITHUB_WORK/KTB/obj/Debug/netcoreapp2.1/KTB.dll
-/home/nick/GITHUB_WORK/KTB/obj/Debug/netcoreapp2.1/KTB.pdb
 /home/nick/GITHUB_WORK/KTB/obj/Debug/netcoreapp2.1/KTB.TagHelpers.input.cache
 /home/nick/GITHUB_WORK/KTB/obj/Debug/netcoreapp2.1/KTB.TagHelpers.output.cache
 /home/nick/GITHUB_WORK/KTB/obj/Debug/netcoreapp2.1/KTB.RazorCoreGenerate.cache
@@ -52,3 +50,5 @@
 /home/nick/GITHUB_WORK/KTB/obj/Debug/netcoreapp2.1/Razor/wwwroot/lib/jquery-validation/dist/Error.g.cshtml.cs
 /home/nick/GITHUB_WORK/KTB/obj/Debug/netcoreapp2.1/KTB.RazorTargetAssemblyInfo.cache
 /home/nick/GITHUB_WORK/KTB/obj/Debug/netcoreapp2.1/KTB.RazorTargetAssemblyInfo.cs
+/home/nick/GITHUB_WORK/KTB/obj/Debug/netcoreapp2.1/KTB.dll
+/home/nick/GITHUB_WORK/KTB/obj/Debug/netcoreapp2.1/KTB.pdb

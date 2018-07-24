@@ -29,7 +29,7 @@ namespace KTB{
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services){
 
-            services.AddSession();
+             services.AddSession();
             services.AddOptions();
             services.Configure<MySqlOptions>(Configuration.GetSection("DbInfo"));
 

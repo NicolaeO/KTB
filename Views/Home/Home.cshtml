@@ -15,6 +15,7 @@
                     <!-- <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li> -->
                     <!-- <li><a asp-area="" asp-controller="Home" asp-action="LogPage">Login/Register</a></li> -->
                     <li><a asp-area="" asp-controller="Home" asp-action="LogOut">Log off</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Played">Games Log</a></li>
                 </ul>
             </div>
         </div>
@@ -22,14 +23,39 @@
 
 <!-- <h3>@ViewData["Message"]</h3> -->
 <div class="mainBody">
+    <div class="leftSide">
+        <img src="/images/placeholder-hi.png" alt="Place holder image">
 
-
-<div class="leftSide">
-    <img src="/images/placeholder-hi.png" alt="Place holder image">
-
-    <h4>Jora</h4>
+        <h4>Jora</h4>
+        &nbsp; &nbsp;
+    </div>
+    <div class="rightSide">
+        <h4>Rank <b>Beginner</b>  <img src="/images/ranking-cup.png" alt="Cup"></h4>
+        <h4>Points <b>1500</b> <img src="/images/scoreboard.png" alt="Score"></h4>
+        <form action="CategoryGame" method="POST">
+        <h4>Prefered categories <img src="/images/category.png" alt="Category"><br>
+            <select name="category">
+                <option value="any">Any</option>
+                <option value="books">Books</option>
+                <option value="music">Music</option>
+                <option value="film">Film</option>
+                <option value="television">Television</option>
+                <option value="vehicle">Vehicle</option>
+                <option value="music">Music</option>
+            </select>
+            <a asp-area="" asp-controller="Home" asp-action="AddCategory">
+                <img src="/images/addCategory.png" alt="Add">
+            </a>
+        </h4>
+        </form>
+        <p>
+            History <a asp-area="" asp-controller="Home" asp-action="Remove"><img src="/images/trash1.png" alt="Trash Can"></a><br>
+            Sports  <a asp-area="" asp-controller="Home" asp-action="Remove"><img src="/images/trash1.png" alt="Trash Can"></a><br>
+            Animal  <a asp-area="" asp-controller="Home" asp-action="Remove"><img src="/images/trash1.png" alt="Trash Can"></a><br>
+        </p>
+        <!-- <a asp-area="" asp-controller="Home" asp-action="Played"><button id="played">Played games</button></a>  -->
+    </div>
 </div>
 
-    &nbsp; &nbsp;
-</div>
+ 
    

@@ -10,12 +10,12 @@ namespace KTB.Models{
         [Key]
         public int id{ get; set; }
 
-        public int categoryId{get; set;}
+        public int categoryId {get; set;}
         public Categories Category{get; set;}
 
         public int gameId{get; set;}
         public Games Game{get; set;}
-        
+
 
     }
 }
