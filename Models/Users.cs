@@ -40,12 +40,18 @@ namespace KTB.Models{
 
         public DateTime created_at { get; set; } 
 
-        // public List<UserActivity> userActivity { get; set; }
-        // public List<Activiti> activity { get; set; }
+        public List<UserCategory> UserCategory { get; set; }
+        public List<Games> Games { get; set; }
+        public List<UserAnswer> UserAnswer{get; set;}
+        public List<UserChat> UserChat{get; set;}
+        public List<Chats> Chats {get; set;}
 
-        // public User (){
-        //     userActivity = new List<UserActivity>();
-        //     activity = new List<Activiti>();
-        // }
+        public User (){
+            UserCategory = new List<UserCategory>();
+            Games = new List<Games>();
+            UserAnswer = new List<UserAnswer>();
+            UserChat = new List<UserChat>();
+            Chats = new List<Chats>();
+        }
     }
 }
