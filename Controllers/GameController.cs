@@ -21,6 +21,36 @@ namespace KTB.Controllers{
     public class GameController : Controller{
 
 
+        private KTBContext _context;
+        public static string URL = "https://opentdb.com/api.php?amount=10";
+        public GameController(KTBContext context){
+            _context = context;
+        }
+
+        public IActionResult NewGame(){
+
+            return RedirectToAction("Index", "Home");
+        }
+
+
+        async static void GetRequest(string url){
+            using(HttpClient client = new HttpClient()){
+                using (HttpResponseMessage response = await client.GetAsync(URL)){
+                    using(HttpContent content = response.Content){
+                        string mycontent = await content.ReadAsStringAsync();
+                        Console.WriteLine("****************************************************");
+                        Console.WriteLine(mycontent);
+                        Console.WriteLine("****************************************************");
+                        // content.ReadAsAsync
+                    }
+                }
+            }
+        }
+
+
+
+
+/*
         static HttpClient client = new HttpClient();
 
         static async Task RunAsync(){
@@ -31,23 +61,18 @@ namespace KTB.Controllers{
                 // new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        private KTBContext _context;
-        public GameController(KTBContext context){
-            _context = context;
-        }
-
-        public IActionResult NewGame(){
-
-        }
-
+        
         static async Task<TriviaData> GetProductAsynk(string path){
             List<TriviaData> data = new List<TriviaData>();
-            HttpResponsemessage response = await client.GetAsync(path);
+            HttpResponseMessage response = await client.GetAsync(path);
             if (response.IsSuccessStatusCode){
-                data = await response.Content.ReadAsAsynk<TriviaData>();
+                data = await response.Content.ReadAsAsync<TriviaData>();
             } 
             return data;
 
         }
+
+ */
+
     }
 }

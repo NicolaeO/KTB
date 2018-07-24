@@ -46,7 +46,7 @@ namespace KTB.Models{
         public List<UserChat> UserChat{get; set;}
         public List<Chats> Chats {get; set;}
 
-        public User (){
+        public Users (){
             UserCategory = new List<UserCategory>();
             Games = new List<Games>();
             UserAnswer = new List<UserAnswer>();

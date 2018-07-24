@@ -8,7 +8,7 @@ namespace KTB.Models{
         public DbSet<UserCategory> usersCategory { get; set; }
         public DbSet<UserChat> usersChat { get; set; }
         public DbSet<UserAnswer> userAnswer { get; set; }
-        public DbSet<Chat> chat { get; set; }
+        public DbSet<Chats> chat { get; set; }
         public DbSet<Questions> questions { get; set; }
         public DbSet<Games> games { get; set; }
         public DbSet<GameCategory> gameCategory { get; set; }

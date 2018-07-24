@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Linq;
 
 namespace KTB.Models{
-    public class UserCatebgory : BaseEntity{
+    public class UserCategory : BaseEntity{
         
         [Key]
         public int id{ get; set; }

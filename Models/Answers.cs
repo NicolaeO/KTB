@@ -14,7 +14,7 @@ namespace KTB.Models{
         public int correct_answer {get; set;}
 
         public int questionId {get; set;}
-        public Qusestions Qusestion{get; set;}
-        
+        public Questions Question{get; set;}
+
     }
 }
