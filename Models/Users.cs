@@ -22,13 +22,15 @@ namespace KTB.Models{
         [MinLength(4)]
         public string last_name { get; set; }
 
-        [Required]
+        [Required(ErrorMessage="Enter your age")]
         [Range(1, 120)]
         public int age { get; set; }
 
         [Required(ErrorMessage="You must enter your email")]
         [EmailAddress]
         public string email { get; set; }
+
+        public int points { get; set; }
 
         [Required(ErrorMessage="You must enter password")]
         [MinLength(8)]

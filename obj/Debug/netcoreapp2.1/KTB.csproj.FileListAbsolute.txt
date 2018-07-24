@@ -14,7 +14,6 @@
 /home/dima/ownCloud/CodingDojo/c/KTB/obj/Debug/netcoreapp2.1/KTB.TagHelpers.input.cache
 /home/dima/ownCloud/CodingDojo/c/KTB/obj/Debug/netcoreapp2.1/KTB.TagHelpers.output.cache
 /home/dima/ownCloud/CodingDojo/c/KTB/obj/Debug/netcoreapp2.1/KTB.RazorCoreGenerate.cache
-/home/dima/ownCloud/CodingDojo/c/KTB/obj/Debug/netcoreapp2.1/Razor/Views/Home/Contact.g.cshtml.cs
 /home/dima/ownCloud/CodingDojo/c/KTB/obj/Debug/netcoreapp2.1/Razor/Views/Home/Index.g.cshtml.cs
 /home/dima/ownCloud/CodingDojo/c/KTB/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Error.g.cshtml.cs
 /home/dima/ownCloud/CodingDojo/c/KTB/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_CookieConsentPartial.g.cshtml.cs
@@ -28,4 +27,4 @@
 /home/dima/ownCloud/CodingDojo/c/KTB/obj/Debug/netcoreapp2.1/KTB.dll
 /home/dima/ownCloud/CodingDojo/c/KTB/obj/Debug/netcoreapp2.1/KTB.pdb
 /home/dima/ownCloud/CodingDojo/c/KTB/obj/Debug/netcoreapp2.1/KTB.csproj.CopyComplete
-/home/dima/ownCloud/CodingDojo/c/KTB/obj/Debug/netcoreapp2.1/Razor/Views/Home/LogPage.g.cshtml.cs
+/home/dima/ownCloud/CodingDojo/c/KTB/obj/Debug/netcoreapp2.1/Razor/Views/Home/Home.g.cshtml.cs
