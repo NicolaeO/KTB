@@ -1,0 +1,155 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">KTB</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <!-- <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li> -->
+                <li><a asp-area="" asp-controller="Home" asp-action="Home">Home</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="LogOut">Log off</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Played">Games Log</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="GameGenerator">
+
+</div>
+
+<div id="game">
+
+    <div class="card text-white bg-danger mb-3" >
+        <div class="card-header">Count down</div>
+        <div class="card-body">
+            <h5 id="counterWatch" class="card-title">
+                <div id="clockdiv">
+                <div>
+                    <span class="minutes"></span>
+                    <span class="seconds"></span>
+                    <span class="miliseconds"></span>
+                </div>
+            </h5>
+        </div>
+    </div>
+
+    <div class="card text-white bg-success mb-3" >
+        <div class="card-header">Score</div>
+        <div class="card-body">
+            <h5 class="card-title">@ViewBag.LogedUser.points</h5>
+        </div>
+    </div>
+
+    <form asp-action="CheckAnswers" asp-controller="Game" method="POST" id="Questionaire">
+        @{int n = 1;}
+        @foreach(var quest in @ViewBag.GameData){
+            <h4 class="card-title"><b>Question: @n</b></h4>
+
+            <div class="questions">
+                <p>
+                    @Html.Raw(@quest.question.ToString()); 
+                </p>
+            </div>
+            <div class="btn-group">
+                @foreach(var answer in quest.Answers){
+                    <label>
+                        <input type="radio" value="@answer.id" name="@quest.id"> 
+                        @Html.Raw(@answer.answer.ToString());
+                    </label>
+                    <br>
+                }
+            </div>
+            n += 1;
+            <hr>
+        }
+        <br>
+        <input type="submit" class="btn btn-success  btn-lg" value="check answer">
+    </form>
+
+<br><br>
+</div>
+
+
+
+<script>
+$(document).ready(function() {
+    $("#game").hide();
+
+    $("#showClose").click(function(){
+        $("#game").show();
+    });
+ 
+});
+</script>
+
+
+<script>
+
+    function getTimeRemaining(endtime) {
+        var t = Date.parse(endtime) - Date.parse(new Date());
+
+        var miliseconds = Math.floor(t % 1000);
+        var seconds = Math.floor((t / 1000) % 60);
+        var minutes = Math.floor((t / 1000 / 60) % 60);
+        return {
+        'total': t,
+        'minutes': minutes,
+        'seconds': seconds,
+        'miliseconds': miliseconds
+        };
+    }
+    
+    function initializeClock(id, endtime) {
+        var clock = document.getElementById(id);
+        var minutesSpan = clock.querySelector('.minutes');
+        var secondsSpan = clock.querySelector('.seconds');
+        var milisecondsSpan = clock.querySelector('.miliseconds');
+
+    
+        function updateClock() {
+        var t = getTimeRemaining(endtime);
+    
+        minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+        secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+        milisecondsSpan.innerHTML = ('00' + t.miliseconds).slice(-3);
+            
+        // stops the interval
+        if (t.total <= 0) {
+            clearInterval(timeinterval);
+            document.getElementById("Questionaire").submit();
+        }
+        }
+        // update the interval
+        updateClock();
+        // var timeinterval = setInterval(updateClock, 1000);
+        var timeinterval = setInterval(updateClock, 10);
+
+    }
+
+    var amount = "@ViewBag.amount";
+    var tm = 1;
+    
+    if(amount > 40){
+        tm = 5;
+    }else if(amount > 30){
+        tm = 4;
+    }else if(amount > 20){
+        tm = 3;
+    }else if(amount > 10){
+        tm = 2;
+    }else if(amount <= 10){
+        tm = 1;
+    }
+    
+    //   var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+    var deadline = new Date(Date.parse(new Date()) + tm * 60 * 1000);
+
+    initializeClock('clockdiv', deadline);
+</script>

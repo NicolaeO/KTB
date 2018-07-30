@@ -1,0 +1,56 @@
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">KTB</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <!-- <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li> -->
+                <!-- <li><a asp-area="" asp-controller="Home" asp-action="LogPage">Login/Register</a></li> -->
+                <li>
+                    <a asp-area="" asp-controller="Home" asp-action="LogOut">Log off</a>
+                </li>
+                <li>
+                    <!-- <a asp-area="" asp-action="Index" asp-controller="Home">Go Home</a> -->
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div id="playPage">
+<table id="playTable" style="width: 100%;  border: 2px solid rgb(0, 0, 0); padding: 10px;">
+    <tr>
+        <th>Question</th>
+        <th>Correct Answer</th>
+        <th>User Answer</th>
+    </tr>
+
+    @foreach(var question in ViewBag.User_Answer){
+        <tr>
+            <td>@Html.Raw(@question.question.ToString());</td>
+            
+            @foreach(var ans in question.Answers){
+                @if(ans.correct_answer == 1 && ans.questionId == question.id){
+                    <td>@Html.Raw(@ans.answer.ToString());</td>
+                }
+            }
+            
+            @foreach(var ua in question.UsersAnswers){
+                @if(ua.questionId == question.id){
+                    <td>@Html.Raw(@ua.answer.ToString());</td>
+                }
+            }
+        </tr>
+    }
+</table>
+<h1>You earned: @ViewBag.earnedPoints points</h1>
+</div>
+
+<a asp-area="" asp-action="Index" style="float:right; margin-top: -5%; margin-right: 2%;" class="btn btn-success btn-lg"  asp-controller="Home">Go Home</a>

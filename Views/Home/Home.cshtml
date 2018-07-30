@@ -1,0 +1,200 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">KTB</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <!-- <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li> -->
+                <!-- <li><a asp-area="" asp-controller="Home" asp-action="LogPage">Login/Register</a></li> -->
+                <li>
+                    <a asp-area="" asp-controller="Home" asp-action="LogOut">Log off</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Home" asp-action="Played">Games Log</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- <h3>@ViewData["Message"]</h3> -->
+<div class="mainBody">
+    <div class="leftSide">
+        <img src="/images/placeholder-hi.png" alt="Place holder image">
+
+        <h4>@ViewBag.LogedUser.first_name</h4>
+        &nbsp; &nbsp;
+    </div>
+    <div class="rightSide">
+
+        <div class="mainBodyCenter">
+
+
+
+
+                <form asp-action="GenerateGame" asp-controller="Game" method="GET">
+
+                        <div class="selectionType">
+        
+                            <label for="category">
+                                <b>Category:</b>
+                            </label>
+                            <br>
+                            <select name="category">
+                                <option value="any">Any Category</option>
+                                <option value="9">General Knowledge</option>
+                                <option value="10">Entertainment: Books</option>
+                                <option value="11">Entertainment: Film</option>
+                                <option value="12">Entertainment: Music</option>
+                                <option value="13">Entertainment: Musicals &amp; Theatres</option>
+                                <option value="14">Entertainment: Television</option>
+                                <option value="15">Entertainment: Video Games</option>
+                                <option value="16">Entertainment: Board Games</option>
+                                <option value="17">Science &amp; Nature</option>
+                                <option value="18">Science: Computers</option>
+                                <option value="19">Science: Mathematics</option>
+                                <option value="20">Mythology</option>
+                                <option value="21">Sports</option>
+                                <option value="22">Geography</option>
+                                <option value="23">History</option>
+                                <option value="24">Politics</option>
+                                <option value="25">Art</option>
+                                <option value="26">Celebrities</option>
+                                <option value="27">Animals</option>
+                                <option value="28">Vehicles</option>
+                                <option value="29">Entertainment: Comics</option>
+                                <option value="30">Science: Gadgets</option>
+                                <option value="31">Entertainment: Japanese Anime &amp; Manga</option>
+                                <option value="32">Entertainment: Cartoon &amp; Animations</option>
+                            </select>
+                            <br>
+        
+                            <label for="amount">
+                                <b>Number of questions:</b>
+                            </label>
+                            <br>
+                            <input name="amount" type="number" min="5" max="50" value="5">
+        
+                        </div>
+        
+                        <div class="selectionType">
+        
+                            <label for="difficulty">
+                                <b>Difficulty level:</b>
+                            </label>
+                            <br>
+                            <select name="difficulty">
+                                <option value="any">Any Difficulty</option>
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                            <br>
+        
+                            <label for="type">
+                                <b>Select type:</b>
+                            </label>
+                            <br>
+                            <select name="type">
+                                <option value="any">Any Type</option>
+                                <option value="multiple">Multiple Choice</option>
+                                <option value="boolean">True / False</option>
+                            </select>    
+                        </div>
+                        <br>
+                        <br>
+        
+                        <div class="clearfix">
+                            <input type="submit" class="btn btn-success" value="Generate Test">
+                            <!-- onclick="CloseGenerator()" -->
+                            <!-- <button id="showClose" class="btn btn-success">show</button> -->
+        
+                        </div>
+                    </form>
+
+
+            <div class="overTabel">
+
+            <table id="homeTable">
+                <tr>
+                    <th>Name</th>
+                    <th>Rank</th>
+                    <th>Score</th>
+                </tr>
+                @foreach(var user in ViewBag.allUsers){
+                <tr>
+                    <td>@user.first_name</td>
+                    @if(user.points > 500000){
+                    <td>Doctor</td>
+                    } else if(user.points > 100000){
+                    <td>Senior</td>
+                    } else if(user.points > 50000){
+                    <td>Intermidiat</td>
+                    } else if(user.points
+                    < 50000){ <td>Junior</td>
+                        }
+                        <td>@user.points</td>
+                </tr>
+                }
+            </table>
+        </div>
+    </div>
+
+        <div class="obiecte">
+            <h4>Rank @if(ViewBag.LogedUser.points > 500000){
+                <b>Doctor</b>
+                } else if(ViewBag.LogedUser.points > 100000){
+                <b>Senior</b>
+                } else if(ViewBag.LogedUser.points > 50000){
+                <b>Intermidiat</b>
+                } else if(ViewBag.LogedUser.points
+                < 50000){ <b>Junior</b>
+                    }
+                    <img src="/images/ranking-cup.png" alt="Cup">
+            </h4>
+            <h4>Score
+                <b>@ViewBag.LogedUser.points</b>
+                <img src="/images/scoreboard.png" alt="Score">
+            </h4>
+
+
+            <form asp-action="AddFavCategory" method="POST" asp-controller="Game">
+                <h4>Prefered categories
+                    <img src="/images/category.png" alt="Category">
+                    <br>
+
+                    <select name="categoryid" style="width:50%;">
+                        <option value="any">Any Category</option>
+                        @foreach(var cat in ViewBag.allCategories){
+                        <option value="@cat.id">@cat.name</option>
+                        }
+                    </select>
+
+                    <input id="submit-btn" type="submit" value="">
+                </h4>
+
+            </form>
+
+
+
+            <p class="overTabel">
+
+                @foreach(var category in ViewBag.likedCategory){
+                <a asp-area="" asp-controller="Game" asp-action="QuickGame" asp-route-category="@category.Category.value">
+                    @category.Category.name
+                </a>
+                <a asp-area="" asp-controller="Game" asp-action="RemoveFavCategory" asp-route-id="@category.id">
+                    <img src="/images/trash1.png" alt="Trash Can">
+                </a>
+                <br> }
+            </p>
+        </div>
+    </div>
+</div>

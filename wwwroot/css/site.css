@@ -1,0 +1,340 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-image: url("/images/bricWall.jpg");
+    background-attachment: fixed;
+    background-color: #cccccc;
+    font-size: 13pt;
+}
+body a:hover{
+    text-decoration: none;
+}
+
+.body-content {
+    margin-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-image: url("/images/background1.jpg");
+    /* background-color: white;  */
+    box-shadow: 5px 10px #888888;
+}
+
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+.mainBody{
+    height: 100%;
+    margin-top: 10px;
+}
+
+.leftSide{
+    display: inline-block;
+    width: 20%;
+    min-width: 50px;
+    vertical-align: top;
+    height: 100%;
+   
+}
+.leftSide img {
+    width: 100%;
+    height: auto;
+    outline: 1px solid black;
+}
+.leftSide h4{
+    text-align: center;
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.rightSide{
+    /* margin-left: 10%; */
+    display: inline-block;
+    width: 79%;
+    vertical-align: top;
+    /* outline: 1px solid red; */
+}
+.rightSide h4 b{
+    color: red;
+}
+.rightSide h4, .rightSide p{
+    text-align: right;
+    margin-right: 5%;
+}
+
+.rightSide p{
+    /* display: inline-block; */
+    font-size: 13pt;
+    color: rgb(91, 91, 236);
+}
+
+.overTabel{
+    padding-top: 10px;
+    width: 100%;
+    overflow: auto;
+    max-height: 200px;
+    /* outline: 1px solid red; */
+}
+
+.obiecte {
+    width: 39%;
+    display: inline-block;
+    /* outline: 1px solid green; */
+    vertical-align: top;
+    padding: 10px;
+}
+.mainBodyCenter{
+    display: inline-block;
+    width: 59%;
+    vertical-align: top;
+    /* padding: 10px; */
+    text-align: left;
+    min-width: 250px; 
+    padding-left: 10px;
+    /* outline: 1px solid blue; */
+}
+#homeTable table{
+    border-collapse: collapse;
+}
+
+#homeTabletable, #homeTable td, #homeTable th {
+    border: 1px solid black;
+    padding: 5px;
+    width: 100%
+}
+#homeTable th {
+    background: rgb(167, 195, 151);
+}
+#homeTable td{
+    background: rgb(178, 186, 187);
+}
+#homeTable td:hover{
+    background: rgb(246, 254, 255);
+}
+
+
+
+/* ****************************************************** */
+/* #homeTable table {
+    overflow: hidden;
+  }
+  
+  #homeTable tr:hover {
+    background-color: #ffa;
+  }
+  
+  #homeTable td, th {
+    position: relative;
+  }
+  #homeTable td:hover::after,
+  #homeTable th:hover::after {
+    content: "";
+    position: absolute;
+    background-color: #ffa;
+    left: 0;
+    top: -5000px;
+    height: 10000px;
+    width: 100%;
+    z-index: -1;
+  } */
+
+/* *********************************************************** */
+
+
+#playPage{
+    padding: 2%;
+}
+
+#playTable td, #playTable th{ 
+    border: 1px solid rgb(0, 0, 0); 
+    padding: 5px;
+    font-size: 14pt;
+} /* Add borders to cells */  
+
+#playTable th {  
+    background: lightseagreen; /* Light grey background */
+    font-weight: bold; /* Make sure they're bold */
+}
+
+#playTable td {  
+    background: rgb(226, 233, 233); /* Lighter grey background */
+    text-align: center; /* Center our text */
+}
+
+
+
+.container .selectionType{
+    width: 49%;
+    margin-top: 1em;
+    display: inline-block;
+    vertical-align:top;
+}
+.container .selectionType input, .container .selectionType select{
+    width: 95%;
+}
+
+#game button{
+    width: 20%;
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+}
+#game p{
+    font-size: 13pt;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.card{
+    padding:5px;
+    text-align: center;
+    display: inline-block;
+    min-width: 13rem;
+}
+
+
+ /* ********************** mobile devices ************************* */
+@media screen and (max-width: 480px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+    
+    .leftSide img {
+            width: 100%;
+            height: auto;
+    }
+    .mainBody{
+        width: 100%;
+    }
+
+    .leftSide{
+        /* display: inline-block; */
+        width: 50%;
+        /* outline: 1px solid black; */
+    }
+    .leftSide img{
+        /* display: inline-block; */
+        width: 100%;
+        outline: 1px solid black;
+    }
+    .rightSide h4 b{
+        color: red;
+    }
+    .rightSide h4, .rightSide p{
+        text-align: center;
+    }
+    .rightSide p{
+        font-size: 13pt;
+        color: rgb(91, 91, 236);
+    }
+    .rightSide{
+        /* margin-left: 10%; */
+        display: inline-block;
+        width: 100%;
+        vertical-align: top;
+        /* outline: 1px solid red; */
+    }
+    #played{
+        margin: 0%;
+        width: 100%;
+        float: none;
+    }
+    .obiecte {
+        width: 100%;
+        display: inline-block;
+        /* outline: 1px solid green; */
+        vertical-align: top;
+        padding: 10px;
+    }
+    .overTabel{
+        width: 100%;
+        max-height: 200px;
+        overflow: auto;
+        /* outline: 1px solid red; */
+    }
+    
+    .container .selectionType, .container .selectionType input, .container .selectionType select{
+        /* display: inline-block; */
+        width: 100%;
+    }
+  
+    .card{
+        padding:5px;
+        text-align: center;
+        /* display: inline-block; */
+        /* min-width: 13rem; */
+        width: 100%;
+        margin-bottom: .5em;
+    }
+
+    #game button{
+        width: 100%;
+        margin-left: 0em;
+        margin-top: 0.5em;
+    }
+}
+
+
+
+/* Hide/rearrange for smaller screens */
+@media screen and (min-width: 482px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+.regLog{
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    padding: 20px;
+    margin-top: 10px;
+    /* text-align: center; */
+    vertical-align: top;
+    width: 49%;
+    display: inline-block;
+    font-size: 14pt;
+}
+
+#game{
+    margin-top: 1em;
+    background-color: beige;
+    border-radius: 15px;
+    padding: 20px 10px 10px 20px;
+    /* opacity: .5; */
+}
+
+
+#submit-btn{
+    margin-top: 10px;
+    width:30px;
+    height:30px;
+    background:url("/images/addCategory.png") no-repeat;
+}
+
+
+#game input[type=radio] + label {
+    color: #ccc;
+    font-style: italic;
+    } 
+
+#game input[type=radio]:checked + label {
+color: #f00;
+font-style: normal;
+}
+
+
+
+  
